@@ -2,7 +2,7 @@ const apiKey = 'AIzaSyAGUSLiuonS-RPFRudYxvRI-UaolVUANTk'; // Ersetze mit deinem 
 const placeholderThumbnail = 'assets/placeholder.png';
 
 const leagues = {
-    'superleague': 'UC5vaBYHzkZvJkjGSNrz5tWQ', // Beispiel-Channel-ID für Super League
+    'superleague': ['UC5vaBYHzkZvJkjGSNrz5tWQ'], // Beispiel-Channel-ID für Super League
     'sport1': ['@SPORT1'],   // Beispiel-Channel-IDs für europäische Ligen
     'international': ['bluesport'] // Beispiel-Channel-IDs für internationale Turniere
 };
