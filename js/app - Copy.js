@@ -11,30 +11,25 @@ function fetchVideos(league, containerId) {
     const container = document.getElementById(containerId);
     leagues[league].forEach(channelId => {
         fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&type=video&order=date&maxResults=5`)
-            .then(response => {
-                console.log(response); // Ausgabe der Antwort in der Konsole
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log(data); // Ausgabe der Daten in der Konsole
                 data.items.forEach(item => {
                     const videoElement = createVideoElement(item.snippet);
                     container.appendChild(videoElement);
                 });
-            })
-            .catch(error => console.error('Error fetching data:', error)); // Fehlerbehandlung
+            });
     });
 }
 
 function createVideoElement(snippet) {
     const videoDiv = document.createElement('div');
     const title = snippet.title.replace(/(.*?\s-\s)(.*?)/, '$2'); // Nur Mannschaften und Wettbewerb im Titel
-    const videoId = snippet.id.videoId;
+    const thumbnail = snippet.thumbnails.medium.url;
 
     videoDiv.innerHTML = `
         <img src="${placeholderThumbnail}" alt="No Spoiler Thumbnail">
         <h3>${title}</h3>
-        <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/${snippet.resourceId.videoId}" allowfullscreen></iframe>
     `;
     return videoDiv;
 }

@@ -45,3 +45,8 @@ nav ul li a {
     height: 180px;
 }
 
+img {
+    width: 320px;
+    height: 180px;
+    margin: 10px;
+}
