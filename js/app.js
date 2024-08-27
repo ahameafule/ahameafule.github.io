@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyAibvM_lljRNtCIPFfWUe53uTYZmnG2bl4'; // Ersetze mit deinem YouTube API-Schlüssel
+const apiKey = 'KEY'; // Ersetze mit deinem YouTube API-Schlüssel
 const placeholderThumbnail = 'assets/placeholder.png';
 
 const leagues = {
